@@ -1,0 +1,95 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding: 20px;
+    position: relative; /* Define o corpo como o contexto para o posicionamento */
+    background: url('../IMG/fundo.png') no-repeat center center fixed; /* Imagem de fundo */
+    background-size: cover; /* Ajusta a imagem para cobrir todo o fundo */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Camada semi-transparente apenas sobre a imagem */
+    z-index: -1; /* Certifica-se de que fique abaixo do conteúdo */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative; /* Garante que o cabeçalho fique acima da camada opaca */
+    z-index: 1;
+    color: #fff; /* Ajusta a cor para destacar sobre o fundo escuro */
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #ddd; /* Cor mais clara para melhorar a visibilidade sobre o fundo */
+}
+
+.card-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    position: relative; /* Garante que os cards fiquem acima da camada opaca */
+    z-index: 1;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.card button {
+    background-color: #fecdd3;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.card button:hover {
+    background-color: #f4b0b8;
+    color: #fff;
+}
